@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F430E432847A2EE0055E44F /* RealmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F430E422847A2ED0055E44F /* RealmTableViewCell.swift */; };
 		2F4AD2862846C00500F3726E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AD2852846C00500F3726E /* AppDelegate.swift */; };
 		2F4AD2882846C00500F3726E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AD2872846C00500F3726E /* SceneDelegate.swift */; };
 		2F4AD28A2846C00600F3726E /* UserDefaultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AD2892846C00500F3726E /* UserDefaultsViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		041F5207F6393577F8387B7B /* Pods-Module 14.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module 14.release.xcconfig"; path = "Target Support Files/Pods-Module 14/Pods-Module 14.release.xcconfig"; sourceTree = "<group>"; };
+		2F430E422847A2ED0055E44F /* RealmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTableViewCell.swift; sourceTree = "<group>"; };
 		2F4AD2822846C00500F3726E /* Module 14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Module 14.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4AD2852846C00500F3726E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F4AD2872846C00500F3726E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,9 +78,10 @@
 				2F4AD2852846C00500F3726E /* AppDelegate.swift */,
 				2F4AD2872846C00500F3726E /* SceneDelegate.swift */,
 				2F4AD2892846C00500F3726E /* UserDefaultsViewController.swift */,
-				2F4AD2A22846C64A00F3726E /* Persistence.swift */,
 				2F4AD29C2846C3FB00F3726E /* RealmViewController.swift */,
+				2F430E422847A2ED0055E44F /* RealmTableViewCell.swift */,
 				2F4AD29E2846C41000F3726E /* CoreDataViewController.swift */,
+				2F4AD2A22846C64A00F3726E /* Persistence.swift */,
 				2F4AD2A02846C41F00F3726E /* WeatherViewController.swift */,
 				2F4AD28B2846C00600F3726E /* Main.storyboard */,
 				2F4AD2912846C00F00F3726E /* Assets.xcassets */,
@@ -225,6 +228,7 @@
 				2F4AD2A32846C64B00F3726E /* Persistence.swift in Sources */,
 				2F4AD28A2846C00600F3726E /* UserDefaultsViewController.swift in Sources */,
 				2F4AD29D2846C3FB00F3726E /* RealmViewController.swift in Sources */,
+				2F430E432847A2EE0055E44F /* RealmTableViewCell.swift in Sources */,
 				2F4AD29F2846C41000F3726E /* CoreDataViewController.swift in Sources */,
 				2F4AD2A12846C41F00F3726E /* WeatherViewController.swift in Sources */,
 				2F4AD2862846C00500F3726E /* AppDelegate.swift in Sources */,

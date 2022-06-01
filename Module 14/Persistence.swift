@@ -36,6 +36,10 @@ class Persistence {
     // Realm
     
     let localRealm = try! Realm()
+    
+    func getTasks() -> Results<TodoTask> {
+        return localRealm.objects(TodoTask.self)
+    }
 
     func addTask(name: String) {
         let task = TodoTask(name: name)
@@ -45,7 +49,19 @@ class Persistence {
         }
     }
     
-    func getTasks() -> Results<TodoTask> {
-        return localRealm.objects(TodoTask.self)
+    func modifyTask(at: Int, name: String) {
+        let taskToUpdate = localRealm.objects(TodoTask.self)[at]
+        
+        try! localRealm.write {
+            taskToUpdate.name = name
+        }
+    }
+    
+    func deleteTask(at: Int) {
+        let taskToDelete = localRealm.objects(TodoTask.self)[at]
+        
+        try! localRealm.write {
+            localRealm.delete(taskToDelete)
+        }
     }
 }
