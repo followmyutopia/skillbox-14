@@ -206,10 +206,68 @@
                                 <buttonConfiguration key="configuration" style="plain" title="+">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="25"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addButton:" destination="lag-fo-6OR" eventType="touchUpInside" id="IVQ-fq-CvN"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k4M-wI-n6Q">
                                 <rect key="frame" x="0.0" y="128" width="375" height="601"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoreDataCell" id="fUW-74-zuY" customClass="CoreDataTableViewCell" customModule="Module_14" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fUW-74-zuY" id="aMb-Oh-dpQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Complete the third assignment" placeholder="Enter your task here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZZb-jK-09q">
+                                                    <rect key="frame" x="16" y="12.666666666666666" width="199" height="18.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="editingDidBegin:" destination="fUW-74-zuY" eventType="editingDidBegin" id="Pae-RN-Z4m"/>
+                                                        <action selector="editingDidEnd:" destination="fUW-74-zuY" eventType="editingDidEnd" id="5OH-om-OyD"/>
+                                                    </connections>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LC-Kz-8Ga">
+                                                    <rect key="frame" x="340" y="6.3333333333333321" width="35" height="30.999999999999996"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="✕"/>
+                                                    <connections>
+                                                        <action selector="deleteTask:" destination="fUW-74-zuY" eventType="touchUpInside" id="M1L-CU-tic"/>
+                                                    </connections>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR6-EH-EkL">
+                                                    <rect key="frame" x="304" y="6.3333333333333321" width="36" height="30.999999999999996"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="✓"/>
+                                                    <connections>
+                                                        <action selector="saveData:" destination="fUW-74-zuY" eventType="touchUpInside" id="sHW-zA-EjT"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZR6-EH-EkL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZZb-jK-09q" secondAttribute="trailing" constant="8" id="00v-zQ-DEY"/>
+                                                <constraint firstItem="1LC-Kz-8Ga" firstAttribute="leading" secondItem="ZR6-EH-EkL" secondAttribute="trailing" id="0FZ-YD-L1L"/>
+                                                <constraint firstAttribute="trailing" secondItem="1LC-Kz-8Ga" secondAttribute="trailing" id="NWo-Yx-E5g"/>
+                                                <constraint firstItem="ZZb-jK-09q" firstAttribute="centerY" secondItem="aMb-Oh-dpQ" secondAttribute="centerY" id="a9T-dR-xQp"/>
+                                                <constraint firstItem="ZZb-jK-09q" firstAttribute="leading" secondItem="aMb-Oh-dpQ" secondAttribute="leadingMargin" id="aqi-z2-9F1"/>
+                                                <constraint firstItem="1LC-Kz-8Ga" firstAttribute="centerY" secondItem="aMb-Oh-dpQ" secondAttribute="centerY" id="rN3-cW-ym3"/>
+                                                <constraint firstItem="ZR6-EH-EkL" firstAttribute="centerY" secondItem="aMb-Oh-dpQ" secondAttribute="centerY" id="y1l-Ok-e9a"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="confirmButton" destination="ZR6-EH-EkL" id="TMq-ZB-4rh"/>
+                                            <outlet property="deleteButton" destination="1LC-Kz-8Ga" id="CDp-ot-Buy"/>
+                                            <outlet property="taskTextField" destination="ZZb-jK-09q" id="2DU-Bs-IJj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lag-fo-6OR" id="hTf-uy-wxS"/>
+                                    <outlet property="delegate" destination="lag-fo-6OR" id="dRd-HP-2e8"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KDo-FV-sq2"/>
@@ -227,6 +285,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="CoreData" image="tablecells" catalog="system" id="Ka2-Hf-5MM"/>
+                    <connections>
+                        <outlet property="tableView" destination="k4M-wI-n6Q" id="n6O-DB-CL7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfb-R0-3qn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

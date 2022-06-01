@@ -28,6 +28,9 @@ class UserDefaultsViewController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
+        
+        // hide the keyboard if you tap the screen
+        // otherways you won't be able to access the tab bar controller
         view.endEditing(true)
     }
 }
