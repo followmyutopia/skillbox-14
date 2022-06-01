@@ -34,6 +34,24 @@ class Persistence {
         get { return Foundation.UserDefaults.standard.string(forKey: kLastNameKey) }
     }
     
+    private let kTemperatureKey = "Persistence.kTemperatureKey"
+    var weatherTemperature: Double? {
+        set { Foundation.UserDefaults.standard.set(newValue, forKey: kTemperatureKey) }
+        get { return Foundation.UserDefaults.standard.double(forKey: kTemperatureKey) }
+    }
+    
+    private let kConditionKey = "Persistence.kConditionKey"
+    var weatherCondition: String? {
+        set { Foundation.UserDefaults.standard.set(newValue, forKey: kConditionKey) }
+        get { return Foundation.UserDefaults.standard.string(forKey: kConditionKey) }
+    }
+    
+    private let kImageKey = "Persistence.kImageKey"
+    var weatherImage: String? {
+        set { Foundation.UserDefaults.standard.set(newValue, forKey: kImageKey) }
+        get { return Foundation.UserDefaults.standard.string(forKey: kImageKey) }
+    }
+    
     // Realm
     
     let localRealm = try! Realm()
